@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add new Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Add new Item</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+    <ion-item>
+      <ion-input label="Item name" labelPlacement="floating" placeholder="Enter Item name"
+      [(ngModel)]="newTodo.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Item description" labelPlacement="floating" placeholder="Enter item description"
+      [(ngModel)]="newTodo.description" name="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Item place" labelPlacement="floating" placeholder="Enter item place"
+      [(ngModel)]="newTodo.place" name="place"
+      ></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="addItemPressed()">Add new Item</ion-button>
+  </div>
+</ion-content>
