@@ -21,10 +21,10 @@
         <p>{{todo?.description}}</p>
       </ion-label>
     </ion-item>
-    <ion-button color="secondary">
-      <ion-icon slot="start" name="checkmark-outline"></ion-icon>
+    <ion-button color="secondary" (click)="markPressed()">
+      <ion-icon slot="start" name="checkmark-outline"></ion-icon> 
       Mark as complete</ion-button>
-    <ion-button color="danger">
+    <ion-button color="danger" (click)="deletePressed()">
       <ion-icon slot="start" name="trash-outline"></ion-icon>
       Delete Item</ion-button>
 </ion-card>

@@ -7,6 +7,9 @@ import { TodoService, Todo } from '../services/todo.service';
 import { OnInit
  } from '@angular/core';
  import { CommonModule } from '@angular/common';
+
+ import { checkmarkDoneOutline } from 'ionicons/icons';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -20,16 +23,16 @@ export class HomePage implements OnInit {
 
   constructor(private todoService: TodoService) {
  
-    addIcons({ addOutline });
+    addIcons({ addOutline, checkmarkDoneOutline });
   }
 // When the app is loaded (onCreate), retrieve the list of todos
   ngOnInit(): void {
-    this.todos = this.todoService.getAll();
+   // this.todos = this.todoService.getAll();
     
   }
   // onResume
-  ionViewWillEnter(){
-    this.todos = this.todoService.getAll();
-    console.log(this.todos);
+  async ionViewWillEnter(){
+    this.todos =  await this.todoService.getAll();
+    
   }
 }

@@ -17,6 +17,8 @@
   <ion-list>
     <ion-card *ngFor="let todo of todos" [routerLink]="['/detail',todo.id]">
     <ion-item >
+      <ion-icon aria-hidden="true" name="checkmark-done-outline" slot="start" *ngIf="todo.done">
+        </ion-icon>
       <ion-label>
         <h1>{{todo.title}}</h1>
         <p>{{todo.place}}</p>
